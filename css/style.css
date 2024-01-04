@@ -1,0 +1,363 @@
+@import "open-color.css";
+:root {
+	/*  distances
+ *  ─────────────────────────────────── */
+	--va-distance0: 0.25em;
+	--va-distance1: 0.5em;
+	--va-distance2: 0.75em;
+	--va-distance3: 1em;
+	/*  button
+ *  ─────────────────────────────────── */
+	--va-button-padding: 0.25em 1em 0.25em 1em;
+	--va-button-border-style: solid;
+	--va-button-border-width: 0.2em;
+	--va-button-border-radius: 1em;
+	--va-button-transition: all 0.25s ease;
+	/*  link
+ *  ─────────────────────────────────── */
+	--va-link-padding: 0.25em 1em 0.25em 1em;
+	--va-link-text-decoration: none;
+	--va-link-border-style: none;
+	--va-link-border-radius: 1em;
+	--va-link-transition: all 0.25s ease;
+	/*  input
+ *  ─────────────────────────────────── */
+	--va-input-padding: 0.25em 1em 0.25em 1em;
+	--va-input-border-style: solid;
+	--va-input-border-width: 0.2em;
+	--va-input-border-radius: 1em;
+}
+
+/* body */
+body {
+	font-family: sans-serif;
+	font-weight: 400;
+	font-size: 12pt;
+
+	background-color: var(--oc-gray-0);
+	color: var(--oc-gray-7);
+
+	padding: 1%;
+}
+
+/* headings */
+h1 {
+	font-weight: 700;
+	font-size: 24pt;
+
+	margin-top: var(--va-distance1);
+	margin-bottom: var(--va-distance0);
+
+	color: var(--oc-gray-8);
+}
+h2 {
+	font-weight: 700;
+	font-size: 18pt;
+
+	margin-top: var(--va-distance1);
+	margin-bottom: var(--va-distance0);
+
+	color: var(--oc-gray-8);
+}
+h3 {
+	font-weight: 700;
+	font-size: 12pt;
+
+	margin-top: var(--va-distance1);
+	margin-bottom: var(--va-distance0);
+
+	color: var(--oc-gray-8);
+}
+
+/* paragraph */
+p{
+    margin: var(--va-distance1) 0;
+}
+
+/* div */
+.div-default {
+    margin: var(--va-distance1) 0;
+}
+
+/* link within text */
+a:not(.link-default) {
+	display: inline;
+	position: relative;
+	color: var(--oc-blue-8);
+	text-decoration: none;
+}
+a:not(.link-default):visited {
+	color: var(--oc-grape-8);
+}
+a:not(.link-default):hover {
+	text-decoration: underline;
+}
+
+/* buttons */
+.button-default {
+	cursor: pointer;
+	font-size: 12pt;
+
+	padding: var(--va-button-padding);
+	width: max-content;
+
+	background-color: var(--oc-gray-0);
+	color: var(--oc-gray-7);
+
+	border-style: var(--va-button-border-style);
+	border-width: var(--va-button-border-width);
+	border-radius: var(--va-button-border-radius);
+	transition: var(--va-button-transition);
+}
+.button-default:hover {
+	background-color: var(--oc-gray-7);
+	color: var(--oc-gray-0);
+}
+
+.button-submit {
+	grid-column: 2;
+	background-color: var(--oc-green-0);
+	border-color: var(--oc-green-7);
+	color: var(--oc-green-7);
+}
+.button-submit:hover {
+	background-color: var(--oc-green-7);
+	color: var(--oc-green-0);
+}
+
+.button-edit {
+	background-color: var(--oc-yellow-0);
+	border-color: var(--oc-yellow-7);
+	color: var(--oc-yellow-7);
+}
+.button-edit:hover {
+	background-color: var(--oc-yellow-7);
+	color: var(--oc-yellow-0);
+}
+
+.button-delete {
+	grid-column: 2;
+	background-color: var(--oc-red-0);
+	border-color: var(--oc-red-7);
+	color: var(--oc-red-7);
+}
+.button-delete:hover {
+	background-color: var(--oc-red-7);
+	color: var(--oc-red-0);
+}
+
+/* link to other pages */
+.link-default {
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 12pt;
+
+	text-decoration: var(--va-link-text-decoration);
+
+	background-color: var(--oc-gray-2);
+	color: var(--oc-gray-7);
+
+	padding: var(--va-link-padding);
+
+	border-style: var(--va-link-border-style);
+	border-radius: var(--va-link-border-radius);
+	transition: var(--va-link-transition);
+}
+.link-default:hover {
+	background-color: var(--oc-gray-7);
+	color: var(--oc-gray-2);
+}
+
+/* form */
+.form-default {
+	display: grid;
+	align-items: center;
+	grid-template-columns: max-content max-content;
+	grid-gap: var(--va-distance0);
+}
+.form-default label {
+	display: inline;
+	text-align: right;
+}
+.form-default label:after {
+	content: ":";
+}
+input:not([type="submit"]),
+select {
+	padding: var(--va-input-padding);
+	margin: var(--va-distance0);
+
+	background-color: var(--oc-gray-0);
+	border-color: var(--oc-gray-3);
+	color: var(--oc-gray-7);
+
+	border-style: var(--va-input-border-style);
+	border-width: var(--va-input-border-width);
+	border-radius: var(--va-input-border-radius);
+}
+input:not([type="submit"]):focus,
+select:focus {
+	transition: var(--va-button-transition);
+	background-color: var(--oc-gray-1);
+	border-color: var(--oc-gray-4);
+	outline: none;
+}
+
+/* search */
+.search-input {
+	margin-top: var(--va-distance1);
+
+	width: max-content;
+}
+
+/* table */
+table {
+	padding: var(--va-distance3);
+	border-color: var(--oc-gray-3);
+	border-collapse: collapse;
+	border-spacing: 0;
+	padding-left: 0;
+	display: block;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+tr {
+	margin: var(--va-distance0);
+	padding: var(--va-distance0);
+}
+tr:nth-child(even) {
+	background-color: var(--oc-gray-1);
+}
+tr:nth-child(odd) {
+	background-color: var(--oc-gray-0);
+}
+td {
+	margin: var(--va-distance0);
+	padding: var(--va-distance0);
+}
+th {
+	background-color: var(--oc-gray-1);
+	border-color: var(--oc-gray-4);
+	color: var(--oc-gray-8);
+	padding: var(--va-distance1);
+	text-align: left;
+}
+table form {
+	margin: var(--va-distance0);
+	text-align: center;
+}
+
+/* iframe */
+iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+	aspect-ratio: 1/1;
+}
+
+@media (prefers-color-scheme: dark) {
+	/* body */
+	body {
+		background-color: var(--oc-gray-9);
+		color: var(--oc-gray-1);
+	}
+
+	/* headings */
+	h1 {
+		color: var(--oc-gray-0);
+	}
+	h2 {
+		color: var(--oc-gray-0);
+	}
+	h3 {
+		color: var(--oc-gray-0);
+	}
+
+	/* link within text */
+	a:not(.link-default) {
+		color: var(--oc-blue-2);
+	}
+	a:not(.link-default):visited {
+		color: var(--oc-grape-2);
+	}
+
+	/* buttons */
+	.button-default {
+		background-color: var(--oc-gray-7);
+		border-color: var(--oc-gray-1);
+		color: var(--oc-gray-1);
+	}
+	.button-default:hover {
+		background-color: var(--oc-gray-1);
+		color: var(--oc-gray-7);
+	}
+
+	.button-submit {
+		background-color: var(--oc-green-2);
+		border-color: var(--oc-green-9);
+		color: var(--oc-green-9);
+	}
+	.button-submit:hover {
+		background-color: var(--oc-green-9);
+		color: var(--oc-green-2);
+	}
+
+	.button-edit {
+		background-color: var(--oc-yellow-2);
+		border-color: var(--oc-yellow-9);
+		color: var(--oc-yellow-9);
+	}
+	.button-edit:hover {
+		background-color: var(--oc-yellow-9);
+		color: var(--oc-yellow-2);
+	}
+
+	.button-delete {
+		background-color: var(--oc-red-2);
+		border-color: var(--oc-red-9);
+		color: var(--oc-red-9);
+	}
+	.button-delete:hover {
+		background-color: var(--oc-red-9);
+		color: var(--oc-red-2);
+	}
+
+	/* link to other pages */
+	.link-default {
+		background-color: var(--oc-gray-7);
+		color: var(--oc-gray-1);
+	}
+	.link-default:hover {
+		background-color: var(--oc-gray-1);
+		color: var(--oc-gray-7);
+	}
+
+	/* form */
+	input:not([type="submit"]),
+	select {
+		background-color: var(--oc-gray-9);
+		border-color: var(--oc-gray-7);
+		color: var(--oc-gray-1);
+	}
+	input:not([type="submit"]):focus,
+	select:focus {
+		background-color: var(--oc-gray-8);
+		border-color: var(--oc-gray-6);
+	}
+
+	label {
+		color: var(--oc-gray-1);
+	}
+
+	tr:nth-child(even) {
+		background-color: var(--oc-gray-8);
+	}
+	tr:nth-child(odd) {
+		background-color: var(--oc-gray-9);
+	}
+	th {
+		background-color: var(--oc-gray-8);
+		border-color: var(--oc-gray-6);
+		color: var(--oc-gray-0);
+	}
+}
