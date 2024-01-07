@@ -1,4 +1,4 @@
-#Bundeslandquartett
+# Bundeslandquartett
 
 In diesem Repository befindet sich der Code für das Spiel *Bundeslandquartett*, dass ich zusammen mit Freunden entworfen (inspiriert von *Jet Lag: The Game*) und gespielt habe. Die Spielregeln befinden sich in der Datei *BundeslandQuartett.pdf*.
 
